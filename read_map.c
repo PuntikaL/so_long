@@ -6,7 +6,7 @@
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 09:55:14 by pleepago          #+#    #+#             */
-/*   Updated: 2023/08/14 16:48:59 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/14 17:47:53 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	get_size_plus(t_map *p, char *buffer, int fd)
 		if (width != count_char(buffer))
 		{
 			free(buffer);
-			ft_printf("Map pattern not recognize");
+			ft_printf("Error\n	Map pattern not recognize\n");
 			return (0);
 		}
 		width = count_char(buffer);
@@ -57,7 +57,7 @@ int	get_size(t_map	*p, char *str)
 	fd = open(str, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_printf("Can not open map");
+		ft_printf("Error\n	Can not open map\n");
 		return (0);
 	}
 	buffer = get_next_line(fd);
@@ -110,7 +110,7 @@ int	get_map(t_map *p, char *str)
 	close(fd);
 	if (!valid_wall(p))
 	{
-		ft_printf("Map error");
+		ft_printf("Error\n	Map error\n");
 		return (0);
 	}
 	return (1);

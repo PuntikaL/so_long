@@ -6,7 +6,7 @@
 #    By: pleepago <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/30 08:44:03 by pleepago          #+#    #+#              #
-#    Updated: 2023/08/14 17:14:03 by pleepago         ###   ########.fr        #
+#    Updated: 2023/08/14 17:25:24 by pleepago         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,5 +37,7 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+bonus: all
 
 .PHONY: clean fclean all re norm%       

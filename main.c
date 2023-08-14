@@ -6,7 +6,7 @@
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 10:38:50 by pleepago          #+#    #+#             */
-/*   Updated: 2023/08/14 17:00:55 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/14 17:48:42 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ int	early_check(t_map *m, char **argv)
 {
 	if (!get_size(m, argv[1]))
 	{
-		ft_printf("fail to get size\n");
+		ft_printf("Error\n	fail to get size\n");
 		return (0);
 	}
 	if (!(ft_filename_ok(argv[1])))
 	{
-		ft_printf("Wrong file type\n");
+		ft_printf("Error\n	Wrong file type\n");
 		return (0);
 	}
 	if (get_map(m, argv[1]) == 0)
 		return (0);
 	if (!(valid_char(m)))
 	{
-		printf("not valid components");
+		ft_printf("Error\n	not valid components");
 		return (0);
 	}
 	return (1);
@@ -62,8 +62,8 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_printf("syntex is bash program name follow by map \
-		name : ./so_long maps/ex_ma\n");
+		ft_printf("Error\n	syntex is bash program name follow by map\
+name : ./so_long map_name.ber\n");
 		return (0);
 	}
 	if (!(early_check(&m, argv)))
@@ -74,7 +74,7 @@ int	main(int argc, char **argv)
 	ft_printf("Finish rendering map\n");
 	if (!(valid_play(&v)))
 	{
-		ft_printf("Map not valid\n");
+		ft_printf("Error\n	Map not valid\n");
 		free_map(v.var_map->map);
 		exit(0);
 	}
