@@ -6,7 +6,7 @@
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 14:31:21 by pleepago          #+#    #+#             */
-/*   Updated: 2023/08/06 12:37:37 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/14 15:02:00 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,9 @@ void	create_window(t_map *p, t_vars *g)
 	mlx_win = mlx_new_window(mlx, width, height, "Happy Bunny");
 	g->mlx = mlx;
 	g->win = mlx_win;
-	printf("mlx1 = %s\n", g->mlx);
 	draw_tile(g, width, height);
 	render_wall(g,width,height);
 	get_pos_all(g, p);
-	printf("get_pos_all\n");
 	test_hook(g);
 	mlx_loop(mlx);
 }
@@ -118,4 +116,9 @@ void	redraw_tile(t_pair pos, t_vars *vars)
 void	draw_char(void *mlx, void *mlx_win, t_player *p1)
 {
 	mlx_put_image_to_window(mlx, mlx_win, p1->img, p1->pos.x, p1->pos.y);
+}
+
+void	redraw_exit(void *mlx, void *mlx_win, void *img, t_pair exit_pos)
+{
+	mlx_put_image_to_window(mlx, mlx_win, img, exit_pos.x, exit_pos.y);
 }

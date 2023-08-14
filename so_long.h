@@ -6,7 +6,7 @@
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 09:41:20 by pleepago          #+#    #+#             */
-/*   Updated: 2023/08/06 12:37:48 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/14 16:24:26 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <fcntl.h>
 # include "mlx/mlx.h"
 # include "./ft_gnl/get_next_line.h"
+# include "./ft_printf/ft_printf.h"
 
 typedef	struct s_pair
 {
@@ -43,7 +44,6 @@ typedef struct s_map
 
 typedef struct s_game
 {
-	t_map	g_map;
 	int	game_status;
 	int	door_status;
 	int	all_cnum;
@@ -80,7 +80,7 @@ void	draw_exit(t_vars *g, int pos_x, int pos_y);
 int	get_pos_all(t_vars *g, t_map *p);
 void	set_char(t_vars *g, int x, int y);
 void	draw_tile(t_vars *g, int width, int height);
-void	set_game();
+void	set_game(t_game *game);
 void	render_wall(t_vars *g, int w, int h);
 //TO-DO
 int	key_hook(int keycode, t_vars *vars);
@@ -90,4 +90,18 @@ void	move_down(t_vars *vars);
 void	move_left(t_vars *vars);
 void	move_right(t_vars *vars);
 void	redraw_tile(t_pair pos, t_vars *vars);
+void	check_exit(t_vars *vars);
+void	redraw_exit(void *mlx, void *mlx_win, void *img, t_pair exit_pos);
+void	ft_exit(t_vars *vars);
+int	valid_play(t_vars *vars);
+int	pass(char** map);
+int	copy_map(char **new_map, char** old_map);
+void	walking(char **new_map, int i, int j, t_pair size);
+void	free_map(char **map);
+void	ft_exit(t_vars *vars);
+void	get_p_pos(t_vars *vars);
+int	ft_filename_ok(char *file_name);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int	valid_char(t_map *m);
+int	in_list_char(char c);
 #endif
