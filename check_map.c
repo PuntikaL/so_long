@@ -6,7 +6,7 @@
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 16:09:48 by pleepago          #+#    #+#             */
-/*   Updated: 2023/08/14 16:30:47 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/14 16:51:15 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ int	in_list_char(char c)
 int	valid_char(t_map *m)
 {
 	int	i;
-	int j;
-	int p_count;
+	int	j;
+	int	p_count;
 	int	e_count;
 
-	i = 0;
+	i = -1;
 	p_count = 0;
 	e_count = 0;
-	while(m->map[i] != NULL)
+	while (m->map[++i] != NULL)
 	{
 		j = 0;
 		while (m->map[i][j] != '\0')
 		{
-			if(!(in_list_char(m->map[i][j])))
+			if (!(in_list_char(m->map[i][j])))
 				return (0);
 			if (m->map[i][j] == 'P')
 				p_count++;
@@ -44,7 +44,6 @@ int	valid_char(t_map *m)
 				e_count++;
 			j++;
 		}
-		i++;
 	}
 	if (p_count != 1 || e_count != 1)
 		return (0);
