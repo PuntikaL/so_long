@@ -6,7 +6,7 @@
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 10:11:13 by pleepago          #+#    #+#             */
-/*   Updated: 2022/11/13 10:44:52 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/14 17:16:29 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	hexlen(unsigned	int num)
 }
 
 int	ft_printhex_up(unsigned int n)
-{	
+{
 	unsigned long	dec;
 
 	if (n == 0)

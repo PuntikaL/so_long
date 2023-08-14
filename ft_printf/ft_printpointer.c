@@ -6,7 +6,7 @@
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 07:48:04 by pleepago          #+#    #+#             */
-/*   Updated: 2022/11/13 10:42:29 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/14 17:16:42 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ptrlen(uintptr_t num)
 }
 
 int	ft_printptr(uintptr_t n)
-{	
+{
 	unsigned long	dec;
 
 	if (n == 0)

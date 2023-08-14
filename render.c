@@ -6,7 +6,7 @@
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 14:31:21 by pleepago          #+#    #+#             */
-/*   Updated: 2023/08/14 15:02:00 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/14 16:49:07 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	char	*dst;
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	*(unsigned int *)dst = color;
 }
 
 void	*request_tile(void	*mlx, int select)
@@ -32,7 +32,6 @@ void	*request_tile(void	*mlx, int select)
 	else
 		pic_path = "./pics/tile_flower.xpm";
 	img = mlx_xpm_file_to_image(mlx, pic_path, &img_width, &img_height);
-	
 	return (img);
 }
 
@@ -50,14 +49,14 @@ void	render_wall(t_vars *g, int w, int h)
 	while (i < h)
 	{
 		mlx_put_image_to_window(g->mlx, g->win, img, 0, i);
-		mlx_put_image_to_window(g->mlx, g->win, img, w-38, i);
+		mlx_put_image_to_window(g->mlx, g->win, img, w - 38, i);
 		i += 38;
 	}
 	i = 0;
 	while (i < w)
 	{
 		mlx_put_image_to_window(g->mlx, g->win, img, i, 0);
-		mlx_put_image_to_window(g->mlx, g->win, img, i, h-38);
+		mlx_put_image_to_window(g->mlx, g->win, img, i, h - 38);
 		i += 38;
 	}
 }
@@ -66,9 +65,9 @@ void	create_window(t_map *p, t_vars *g)
 {
 	void	*mlx;
 	void	*mlx_win;
-	int	width;
-	int	height;
-	
+	int		width;
+	int		height;
+
 	width = p->width * 38;
 	height = p->height * 38;
 	mlx = mlx_init();
@@ -76,7 +75,7 @@ void	create_window(t_map *p, t_vars *g)
 	g->mlx = mlx;
 	g->win = mlx_win;
 	draw_tile(g, width, height);
-	render_wall(g,width,height);
+	render_wall(g, width, height);
 	get_pos_all(g, p);
 	test_hook(g);
 	mlx_loop(mlx);
@@ -88,7 +87,7 @@ void	draw_tile(t_vars *g, int width, int height)
 	int		j;
 	int		c;
 	void	*img;
-	
+
 	i = 0;
 	c = 0;
 	while (i < width)
@@ -97,28 +96,10 @@ void	draw_tile(t_vars *g, int width, int height)
 		while (j < height)
 		{
 			c += 7;
-			img = request_tile(g->mlx, j/38 + (c/38));
+			img = request_tile(g->mlx, j / 38 + (c / 38));
 			mlx_put_image_to_window(g->mlx, g->win, img, i, j);
 			j += 38;
 		}
 		i += 38;
 	}
-}
-
-void	redraw_tile(t_pair pos, t_vars *vars)
-{
-	void	*img;
-	
-	img = request_tile(vars->mlx, pos.y/38 + ((pos.x+pos.y)/38));
-	mlx_put_image_to_window(vars->mlx, vars->win, img, pos.x, pos.y);
-}
-
-void	draw_char(void *mlx, void *mlx_win, t_player *p1)
-{
-	mlx_put_image_to_window(mlx, mlx_win, p1->img, p1->pos.x, p1->pos.y);
-}
-
-void	redraw_exit(void *mlx, void *mlx_win, void *img, t_pair exit_pos)
-{
-	mlx_put_image_to_window(mlx, mlx_win, img, exit_pos.x, exit_pos.y);
 }

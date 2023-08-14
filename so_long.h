@@ -6,7 +6,7 @@
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 09:41:20 by pleepago          #+#    #+#             */
-/*   Updated: 2023/08/14 16:24:26 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/14 17:05:28 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ typedef struct	s_data {
 typedef struct	s_vars {
 	void	*mlx;
 	void	*win;
-	t_player	var_player;
+	t_player	var_p;
 	t_map	*var_map;
 	t_game	*var_game;
 }t_vars;
@@ -104,4 +104,6 @@ int	ft_filename_ok(char *file_name);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 int	valid_char(t_map *m);
 int	in_list_char(char c);
+int	get_size_plus(t_map *p, char *buffer, int fd);
+int	early_check(t_map *m, char **argv);
 #endif

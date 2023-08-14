@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   units_libft.c                                      :+:      :+:    :+:   */
+/*   utils_libft.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:48:27 by pleepago          #+#    #+#             */
-/*   Updated: 2023/08/14 15:50:49 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/14 16:49:20 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,22 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		n --;
 	}
 	return (0);
+}
+
+void	redraw_tile(t_pair pos, t_vars *vars)
+{
+	void	*img;
+
+	img = request_tile(vars->mlx, pos.y / 38 + ((pos.x + pos.y) / 38));
+	mlx_put_image_to_window(vars->mlx, vars->win, img, pos.x, pos.y);
+}
+
+void	draw_char(void *mlx, void *mlx_win, t_player *p1)
+{
+	mlx_put_image_to_window(mlx, mlx_win, p1->img, p1->pos.x, p1->pos.y);
+}
+
+void	redraw_exit(void *mlx, void *mlx_win, void *img, t_pair exit_pos)
+{
+	mlx_put_image_to_window(mlx, mlx_win, img, exit_pos.x, exit_pos.y);
 }
