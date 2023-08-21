@@ -6,13 +6,13 @@
 #    By: pleepago <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/30 08:44:03 by pleepago          #+#    #+#              #
-#    Updated: 2023/08/14 17:25:24 by pleepago         ###   ########.fr        #
+#    Updated: 2023/08/21 14:49:22 by pleepago         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-CFLAGS = -Wall -Wextra -Werror -g 
+CFLAGS = -Wall -Wextra -Werror -g
 #CFLAGS = -g 
 CC = gcc
 

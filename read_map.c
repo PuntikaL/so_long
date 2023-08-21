@@ -6,7 +6,7 @@
 /*   By: pleepago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 09:55:14 by pleepago          #+#    #+#             */
-/*   Updated: 2023/08/14 17:47:53 by pleepago         ###   ########.fr       */
+/*   Updated: 2023/08/21 14:38:01 by pleepago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int	count_char(const char *s)
 {
 	int	i;
 
-	if (*s == '\0' || s == NULL)
+	if (s == NULL)
+		return (0);
+	if (*s == '\0')
 		return (0);
 	i = 0;
 	while (s[i] && s[i] != '\n')
