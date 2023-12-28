@@ -32,9 +32,9 @@ Good luck, mate
 
 ## Credit
 Let's take our time to appreciate and thanks for the artist who made the pics and make my game possible! tysm! I searched for the pics in itch.io[https://itch.io/]<br>
-You can follow the bunny's artist here @Sprout_Lands[https://twitter.com/Sprout_Lands] on twitter (or X....)<br>
-The source for rabbit and apple tree is here[https://cupnooble.itch.io/sprout-lands-asset-pack]<br>
-The source for nice objects is here[https://cainos.itch.io/pixel-art-top-down-basic]<br>
+You can follow the bunny's artist here [@Sprout_Lands](https://twitter.com/Sprout_Lands) on twitter (or X....)<br>
+The source for rabbit and apple tree is [here](https://cupnooble.itch.io/sprout-lands-asset-pack)<br>
+The source for nice objects is [here](https://cainos.itch.io/pixel-art-top-down-basic)<br>
 I think I remeber it correctly but if not, feel free to tell me.<br>
 Thank you and I really appreciate all the artists.<br>
 
