@@ -30,8 +30,15 @@ The logic behind this is simple. Once I make my move, I repaint on block that I 
 You could imagin about the pros and cons of it now. <br>
 Good luck, mate
 
+## Credit
+Let's take our time to appreciate and thanks for the artist who made the pics and make my game possible! tysm! I searched for the pics in itch.io[https://itch.io/]
+You can follow the bunny's artist here @Sprout_Lands[https://twitter.com/Sprout_Lands] on twitter (or X....)
+The source for rabbit and apple tree is here[https://cupnooble.itch.io/sprout-lands-asset-pack]
+The source for nice objects is here[https://cainos.itch.io/pixel-art-top-down-basic]
+I think I remeber it correctly but if not, feel free to tell me.
+Thank you and I really appreciate all the artists.
+
 ## Almost forgot
 If the input map is invalid, the program will output so. If the player can't collect all the keys (apples) in order to open the exit gate (chest), the map also will be considered as invalid map.
 Flood fill technique is used to check this.
-
 
